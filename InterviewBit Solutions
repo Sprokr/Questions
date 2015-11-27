@@ -1,0 +1,19 @@
+https://www.interviewbit.com/courses/programming/topics/arrays/problems/reach/
+
+class Solution:
+    # @param X : list of integers
+    # @param Y : list of integers
+    # Points are represented by (X[i], Y[i])
+    # @return an integer
+    def coverPoints(self, X, Y):
+        numPoints = len(X)
+        count = 0
+        startA = X[0]
+        startB = Y[0]
+        for i in range (1,numPoints):
+            a = X[i]
+            b = Y[i]
+            count += max(abs(a-startA),abs(b-startB))
+            startA = a
+            startB = b
+        return count
